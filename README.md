@@ -158,6 +158,7 @@ SpringCloud：关注全局的微服务协调治理框架，将SpringBoot开发�
 概述：SpringCloud工程由一个父工程和若干个Module组成
 
 ==应该遵循的条件：约定 > 配置 > 编码==
+
 ### RestTemplate类
 #### 介绍
 RestTemplate是Spring提供的用于访问Rest服务的客户端模板工具集，提供了多种远程访问Http的方法
@@ -256,7 +257,7 @@ public class Provider8001_APP {
 
 #### 理解
 
-==Eureka就像一个物业管理公司，其他微服务就像小区的住户，每个住户入住时都要向物业管理公司注册，并定时向物业公司交管理费==
+Eureka就像一个物业管理公司，其他微服务就像小区的住户，每个住户入住时都要向物业管理公司注册，并定时向物业公司交管理费==
 
 #### 介绍
 - Eureka是一个基于REST的服务，用于定位服务，以实现云端中间层服务发现和故障转移。
@@ -301,7 +302,7 @@ eureka:
 
 #### 添加启动类
 
-- ==注意：要在类前加@EnableEurekaServer标注==
+- 注意：要在类前加@EnableEurekaServer标注
 
 ```java
 package com.XXX;
@@ -423,12 +424,19 @@ public class Provider8001_APP {
     </build>
 ```
 
-3. 在==当前工程== 的application.yml文件添加回显信息
+3. 在当前工程的application.yml文件添加回显信息
 
 ```yml
 info:
   author: XXX
-  build-version: $project.version$
+  build-version: ${project.version}
+  
+#开启端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info
 ```
 
 
@@ -595,7 +603,7 @@ Spring Cloud Ribbon是基于Netflix Ribbon实现的一套==客户端==负载均�
 
 #### Ribbon初步配置
 
-- ==Ribbon是客户端负载均衡工具！！！Ribbon是客户端负载均衡工具！！！Ribbon是客户端负载均衡工具！！！==所以应该配置在客户端
+- Ribbon是客户端负载均衡工具！！！Ribbon是客户端负载均衡工具！！！Ribbon是客户端负载均衡工具！！！所以应该配置在客户端
 
 1. 加入依赖，因为Riboon需要依赖Eureka运行，所以要同时加入Eureka依赖
 
@@ -723,7 +731,7 @@ public class Consumer80_APP {
 }
 ```
 
-####通过修改源代码获得自定义算法
+####通过修改源代码获得自定义算法 源码地址：https://github.com/Netflix/ribbon/blob/master/ribbon-loadbalancer/src/main/java/com/netflix/loadbalancer/RandomRule.java
 
 目标：每个服务调用5次后再进行轮询（调用次数不是很对，懒得改了)
 

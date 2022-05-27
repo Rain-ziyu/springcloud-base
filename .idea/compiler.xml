@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/microservicecloud/microservicecloud-api/src/main/java/com/atguigu/springcloud/service/DeptClientServiceFallbackFactory.java" />
+      <file url="file://$PROJECT_DIR$/microservicecloud/microservicecloud-api/src/main/java/com/atguigu/springcloud/service/DeptClientService.java" />
+    </excludeFromCompile>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
@@ -20,7 +24,13 @@
         <module name="SpringServiceCloud-provider-dept-8001" />
         <module name="microservicecloud-consumer-dept-feign" />
         <module name="microservicecloud-eureka-7001" />
+        <module name="SpringServiceCloud-eureka-7002" />
+        <module name="SpringServiceCloud-provider-dept-8002" />
+        <module name="SpringServiceCloud-consumer-dept-80" />
+        <module name="SpringServiceCloud-eureka-7001" />
+        <module name="SpringServiceCloud-provider-dept-8003" />
         <module name="microservicecloud-consumer-hystrix-dashboard" />
+        <module name="SpringServiceCloud-eureka-7003" />
         <module name="microservicecloud-consumer-dept-80" />
         <module name="microservicecloud-config-dept-client-8001" />
         <module name="SpringServiceCloud-api" />

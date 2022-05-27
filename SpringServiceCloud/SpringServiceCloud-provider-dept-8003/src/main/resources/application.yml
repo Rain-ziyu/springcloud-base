@@ -1,0 +1,47 @@
+server:
+  port: 8003
+
+mybatis:
+#  config-location: classpath:mybatis/mybatis.cfg.xml   注意这里的xml文件不能与下方的configuration同时存在，否则会报错
+  type-aliases-package: top.yzzy.springcloud.entities
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+spring:
+  application:
+    name: springservicename-dept   #为这个服务取名，非常重要！！！！！
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://yzzy.top:3306/clouddb03?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT&useSSL=false&allowPublicKeyRetrieval=true
+    username: user
+    password: FE2FF25F6A08F101628C33226E21C64A
+    dbcp2:
+      min-idle: 5         #最小连接数
+      initial-size: 5    #初始化连接数
+      max-total: 10      #最大连接数
+      max-wait-millis: 200    #等待连接最长的超时时间
+  cloud:
+    config:
+      enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7003.com:7003/eureka/,http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: SpringServiceCloud-dept8003 #修改默认服务名称
+    prefer-ip-address: true #访问路径可以显示ip
+
+
+info:
+  app.name: SpringCloud
+  company.name: yzzy.top
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info

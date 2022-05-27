@@ -2,10 +2,13 @@ server:
   port: 8001
 
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml
+#  config-location: classpath:mybatis/mybatis.cfg.xml   注意这里的xml文件不能与下方的configuration同时存在，否则会报错
   type-aliases-package: top.yzzy.springcloud.entities
   mapper-locations:
     - classpath:mybatis/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
 spring:
   application:
     name: springservicename-dept   #为这个服务取名，非常重要！！！！！
@@ -20,3 +23,26 @@ spring:
       initial-size: 5    #初始化连接数
       max-total: 10      #最大连接数
       max-wait-millis: 200    #等待连接最长的超时时间
+  cloud:
+    config:
+      enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7003.com:7003/eureka/,http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: SpringServiceCloud-dept8001 #修改默认服务名称
+    prefer-ip-address: true #访问路径可以显示ip
+
+
+
+info:
+  app.name: SpringCloud
+  company.name: yzzy.top
+  build.artifactId: SpringServiceCloud-provider-dept-8001
+  build.version: 1.0-SNAPSHOT
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info
