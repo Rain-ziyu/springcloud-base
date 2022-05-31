@@ -20,6 +20,8 @@
         <module>SpringServiceCloud-provider-dept-hystrix-8001</module>
         <module>SpringServiceCloud-consumer-hystrix-dashboard</module>
         <module>SpringServiceCloud-zuul-gateway-9527</module>
+        <module>SpringServiceCloud-Config-3344</module>
+        <module>SpringServiceCloud-ConfigClient-3355</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/SpringServiceCloud/SpringServiceCloud-Config-3344/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringServiceCloud/SpringServiceCloud-Config-3344/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringServiceCloud/SpringServiceCloud-ConfigClient-3355/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringServiceCloud/SpringServiceCloud-ConfigClient-3355/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringServiceCloud/SpringServiceCloud-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringServiceCloud/SpringServiceCloud-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringServiceCloud/SpringServiceCloud-consumer-dept-80/src/main/java" charset="UTF-8" />

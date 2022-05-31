@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>SpringServiceCloud</artifactId>
+        <groupId>top.yzzy</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>SpringServiceCloud-Config-3344</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+<dependencies>
+    <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-config-server -->
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-config-server</artifactId>
+        <version>3.1.3</version>
+    </dependency>
+    <!--    引入actuator主管监控与信息配置-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+<!--    &lt;!&ndash; 避免Config的Git插件报错：org/eclipse/jgit/api/TransportConfigCallback &ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.eclipse.jgit</groupId>-->
+<!--        <artifactId>org.eclipse.jgit</artifactId>-->
+<!--        <version>4.10.0.201712302008-r</version>-->
+<!--    </dependency>-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+</dependencies>
+</project>

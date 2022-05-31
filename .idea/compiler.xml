@@ -26,6 +26,7 @@
         <module name="SpringServiceCloud-provider-dept-hystrix-8001" />
         <module name="SpringServiceCloud-api" />
         <module name="SpringServiceCloud-zuul-gateway-9527" />
+        <module name="SpringServiceCloud-ConfigClient-3355" />
         <module name="microservicecloud-provider-dept-8002" />
         <module name="microservicecloud-config-eureka-client-7001" />
         <module name="microservicecloud-provider-dept-8001" />
@@ -34,6 +35,7 @@
         <module name="microservicecloud-zuul-gateway-9527" />
         <module name="microservicecloud-provider-dept-hystrix-8001" />
         <module name="SpringServiceCloud-consumer-hystrix-dashboard" />
+        <module name="SpringServiceCloud-Config-3344" />
         <module name="microservicecloud-consumer-dept-feign" />
         <module name="SpringServiceCloud-consumer-dept-80" />
         <module name="microservicecloud-config-dept-client-8001" />

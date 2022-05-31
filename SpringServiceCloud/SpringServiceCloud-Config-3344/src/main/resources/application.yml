@@ -1,0 +1,20 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    #为这个服务取名，非常重要！！！！！
+    name: springservicecloud-config-3344
+  cloud:
+    config:
+      server:
+        git:
+
+          # uri填github上仓库地址
+          uri: https://gitee.com/heizhongweihei/netty_rpc.git
+          username: 15660661509
+          password: wangwenlong521
+#          skipSslValidation: true
+#          timeout: 50
+          default-label: master
+#          search-paths: /MySpringCloud
