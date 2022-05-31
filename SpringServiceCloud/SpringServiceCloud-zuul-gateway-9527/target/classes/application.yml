@@ -1,0 +1,43 @@
+server:
+  port: 9527
+spring:
+  cloud:
+    config:
+      enabled: false
+    gateway:
+      enabled: true
+      routes:
+        - id: service1
+#          uri: http://localhost:8001
+          uri: lb://SPRINGSERVICENAME-DEPT
+          predicates:
+            - Path=/springservicename-dept/**
+          filters:
+            # StripPrefix：去除原始请求路径中的前1级路径，即/gateway
+            - StripPrefix=1
+  application:
+    name: springservicecloud-zuul-gateway
+
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+
+
+#zuul:
+#  ignored-services: SPRINGSERVICENAME-DEPT
+#  routes:
+#    SPRINGSERVICENAME-DEPT: #会员服务网关配置
+#      path: /SPRINGSERVICENAME-DEPT/**   #访问只要是/order/ 开头的直接转发到microserviceEurekaOrder服务
+#      #服务名
+#      serviceId: SPRINGSERVICENAME-DEPT
+#      stripPrefix: false
