@@ -22,7 +22,7 @@ public class DeptController_Consumer {
         return restTemplate.getForObject(HttpUtil.REST_URL_PREFIX+"/dept/get"+id,Dept.class);
     }
     @GetMapping(value = "/dept/list")
-    public List<Dept> addDept(){
+    public List<Dept> getDept(){
         return restTemplate.getForObject(HttpUtil.REST_URL_PREFIX+"/dept/list", List.class);
     }
     @GetMapping("/discovery")

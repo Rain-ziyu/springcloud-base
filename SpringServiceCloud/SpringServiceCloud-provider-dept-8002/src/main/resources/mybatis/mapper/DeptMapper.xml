@@ -5,7 +5,7 @@
 <mapper namespace="top.yzzy.springcloud.dao.DeptDao">
 
 	<select id="findById" resultType="Dept" parameterType="Long">
-		select dept_no,d_name,db_source from dept where deptno=#{deptNo};
+		select dept_no,d_name,db_source from dept where dept_no=#{deptNo};
 	</select>
 	<select id="findAll" resultType="Dept">
 		select dept_no,d_name,db_source from dept;
