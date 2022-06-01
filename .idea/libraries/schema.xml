@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="schema">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/cloud2020-master/.idea/dataSources/d253d66f-53a4-4041-9141-0f5289f92c77/storage_v2/_src_/schema/zutCommunity.UBOthw.zip!/" />
+      <root url="jar://$PROJECT_DIR$/cloud2020-master/.idea/dataSources/d253d66f-53a4-4041-9141-0f5289f92c77/storage_v2/_src_/schema/mysql.osA4Bg.zip!/" />
+      <root url="jar://$PROJECT_DIR$/cloud2020-master/.idea/dataSources/d253d66f-53a4-4041-9141-0f5289f92c77/storage_v2/_src_/schema/bookStore.eDcHeA.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
