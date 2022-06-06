@@ -1,0 +1,68 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: cloud-stream-provider
+  cloud:
+    stream:
+#      binders: # 在此处配置要绑定的rabbitmq的服务信息；
+#        defaultRabbit: # 表示定义的名称，用于于binding整合
+#          type: rabbit # 消息组件类型
+#          environment: # 设置rabbitmq的相关的环境配置
+#            spring:
+#              rabbitmq:
+#                host: localhost
+#                port: 5672
+#                username: guest
+#                password: guest
+#      bindings: # 服务的整合处理
+#        output: # 这个名字是一个通道的名称
+#          destination: studyExchange # 表示要使用的Exchange名称定义
+#          content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”
+#          binder: defaultRabbit  # 设置要绑定的消息服务的具体设置
+      kafka:
+        binder: # 在此处配置要绑定的kafka的服务信息；
+          zk-nodes: yzzy.top:2181
+#          brokers: yzzy.top
+        bootstrap-servers: yzzy.top:9092 #kafka服务地址，集群部署的时候需要配置多个，
+        consumer:
+          group-id: consumer1
+        producer:
+          key-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+          value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+          client-id: producer1
+      bindings: # 服务的整合处理
+        output: # 这个名字是一个通道的名称
+          destination: kafkaTopic # 表示要使用的Exchange名称定义
+          content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”
+          binder: mykafka  # 设置要绑定的消息服务的具体设置
+#        input: #MessageChannel里Input和Output的值
+#          destination: test #目标主题 相当于kafka的topic
+      default-binder: kafka  # 设置要绑定的消息服务的具体设置
+      binders:
+        mykafka:
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: http://yzzy.top:9092 #kafka地址，多个可用,隔开
+                      auto-add-partitions: true
+                      auto-create-topics: true
+                      min-partition-count: 1
+
+
+
+eureka:
+  client: # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
+    instance-id: send-8801.com  # 在信息列表时显示主机名称
+    prefer-ip-address: true     # 访问的路径变为IP地址
+

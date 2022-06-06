@@ -407,7 +407,7 @@ Eureka用于**==服务注册==**,目前官网**已经停止更新**
 
 ```java
 我们在zk上注册的node是临时节点,当我们的服务一定时间内没有发送心跳
-        那么zk就会`将这个服务的node删除了
+ 那么zk就会`将这个服务的node删除了
 ```
 
 **这里测试,就不写service与dao什么的了**
@@ -452,6 +452,8 @@ connect-string: 1.2.3.4,2.3.4.5
 
 ## 8,Consul:
 
+官网地址：https://www.consul.io/downloads
+
 ![](.\图片\consul的1.png)
 
 ![](.\图片\consul的2.png)
@@ -463,6 +465,17 @@ connect-string: 1.2.3.4,2.3.4.5
 ![](.\图片\consul的3.png)
 
 启动是一个命令行界面,需要输入consul agen-dev启动
+
+```
+[root@VM-4-15-centos ~]# consul leave //关闭
+
+Graceful leave complete
+[root@VM-4-15-centos ~]# 
+[root@VM-4-15-centos ~]# consul agent -dev -client 0.0.0.0 -ui  //开启外网访问
+
+```
+
+
 
 ### 2,创建新的pay模块,8006
 

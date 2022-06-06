@@ -16,7 +16,7 @@ public class ConfigClientController {
     @Value("${server.port}")
     private String serverPort;
 
-    @Value("${config.info}")
+    @Value("${spring.application.name}")
     private String configInfo;
 
 

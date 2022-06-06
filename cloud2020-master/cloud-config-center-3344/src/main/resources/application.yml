@@ -8,16 +8,24 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/lixiaogou/sprincloud-config.git #GitHub上面的git仓库名字
-          search-paths: #搜索目录
-            - springcloud-config
-      label: master #读取分支
+          uri: https://gitee.com/heizhongweihei/netty_rpc.git #GitHub上面的git仓库名字
+          username: 15660661509
+          password: wangwenlong521
+          default-label: master
+#          search-paths: #搜索目录
+#            - springcloud-config
+#      label: master #读取分支
       #启动成功后访问的路径 http://ip:3344/{label}/{application}-{profile}.yml 能访问的配置文件 就表示成功了
-
+      #rabbitmq相关配置
+  rabbitmq:
+    host: yzzy.top
+    port: 5672  #服务端口号，不是web页面端口号
+    username: admin
+    password: admin
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
 
 
 ##rabbitmq相关配置,暴露bus刷新配置的端点 SpringCloud Bus动态刷新全局广播
@@ -28,9 +36,6 @@ management:
         include: 'bus-refresh'
 
 
-#rabbitmq相关配置
-rabbitmq:
-  host: localhost
-  port: 15672
-  username: guest
-  password: guest
+
+
+

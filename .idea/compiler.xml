@@ -32,10 +32,14 @@
         <module name="microservicecloud-consumer-dept-80" />
         <module name="SpringServiceCloud-provider-dept-hystrix-8001" />
         <module name="cloud-provider-hystrix-payment8001" />
+        <module name="cloud-stream-kafka-consumer8803" />
         <module name="SpringServiceCloud-api" />
         <module name="cloud-config-client-3366" />
+        <module name="cloud-stream-kafka-consumer8805" />
+        <module name="cloud-stream-kafka-consumer8804" />
         <module name="cloudalibaba-config-nacos-client3377" />
         <module name="microservicecloud-api" />
+        <module name="cloud-stream-kafka-provider8801" />
         <module name="cloud-api-commons" />
         <module name="microservicecloud-provider-dept-hystrix-8001" />
         <module name="microservicecloud-consumer-dept-feign" />
