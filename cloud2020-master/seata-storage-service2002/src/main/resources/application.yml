@@ -7,15 +7,15 @@ spring:
   cloud:
     alibaba:
       seata:
-        tx-service-group: fsp_tx_group #自定义事务组名称需要与seata-server中的对应
+        tx-service-group: SEATA_GROUP #自定义事务组名称需要与seata-server中的对应
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: 192.168.150.111:1111
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/seata_storage
-    username: root
-    password: root
+    url: jdbc:mysql://yzzy.top:3306/seata_storage
+    username: user
+    password: FE2FF25F6A08F101628C33226E21C64A
 
 logging:
   level:

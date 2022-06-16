@@ -23,4 +23,10 @@ public class OrderController {
         orderService.create(order);
         return new CommonResult(200, "订单创建成功");
     }
+
+    @GetMapping("/order/createId")
+    public CommonResult createId() {
+        Long id = orderService.getId();
+        return new CommonResult(200, "创建Id成功",id);
+    }
 }

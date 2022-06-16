@@ -24,7 +24,7 @@ spring:
           destination: kafkaTopic # 表示要使用的Exchange名称定义
           content-type: application/json # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
           binder: mykafka # 设置要绑定的消息服务的具体设置
-#          group: atguiguA  #当加入同一消费者组织后通一次数据只会消费一次
+          group: atguiguB   #加上分组之后会进行消息的持久化消费，即当该微服务未启动时启动之后可以消费之前未消费的数据  #当加入同一消费者组织后通一次数据只会消费一次
 
 eureka:
   client: # 客户端进行Eureka注册的配置

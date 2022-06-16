@@ -8,4 +8,5 @@ import com.atguigu.springcloud.alibaba.domain.Order;
  */
 public interface OrderService {
     void create(Order order);
+    Long getId();
 }

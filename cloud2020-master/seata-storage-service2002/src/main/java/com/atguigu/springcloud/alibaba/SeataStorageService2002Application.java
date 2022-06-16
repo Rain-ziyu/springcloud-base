@@ -1,5 +1,6 @@
 package com.atguigu.springcloud.alibaba;
 
+import io.seata.spring.annotation.datasource.EnableAutoDataSourceProxy;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -12,6 +13,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableDiscoveryClient
+@EnableAutoDataSourceProxy
 @EnableFeignClients
 public class SeataStorageService2002Application {
     public static void main(String[] args) {

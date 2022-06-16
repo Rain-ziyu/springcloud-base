@@ -1,7 +1,6 @@
 package com.atguigu.springcloud.alibaba.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import io.seata.rm.datasource.DataSourceProxy;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.transaction.SpringManagedTransactionFactory;
@@ -15,7 +14,7 @@ import javax.sql.DataSource;
 
 /**
  * @author lixiaolong
- * @date 2020-02-26 16:24
+ * @date 2019-12-11 16:58
  * 使用Seata对数据源进行代理
  */
 @Configuration
@@ -30,13 +29,13 @@ public class DataSourceProxyConfig {
         return new DruidDataSource();
     }
 
-    @Bean
-    public DataSourceProxy dataSourceProxy(DataSource dataSource) {
-        return new DataSourceProxy(dataSource);
-    }
+//    @Bean
+//    public DataSourceProxy dataSourceProxy(DataSource dataSource) {
+//        return new DataSourceProxy(dataSource);
+//    }
 
     @Bean
-    public SqlSessionFactory sqlSessionFactoryBean(DataSourceProxy dataSourceProxy) throws Exception {
+    public SqlSessionFactory sqlSessionFactoryBean(DataSource dataSourceProxy) throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSourceProxy);
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(mapperLocations));

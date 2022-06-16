@@ -9,7 +9,6 @@
         <option value="$PROJECT_DIR$/cloud2022/pom.xml" />
         <option value="$PROJECT_DIR$/cloud2020-master/pom.xml" />
         <option value="$PROJECT_DIR$/cloud2020-master/cloud-provider-payment8001/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud2020-master/cloud-stream-kafka-provider8801/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -18,7 +17,7 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="ProjectType">
     <option name="id" value="jpab" />
   </component>

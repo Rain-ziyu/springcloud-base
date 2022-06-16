@@ -619,7 +619,7 @@ RestTemplate的:
 
 ![](.\图片\Ribbon的18.png)
 
-**表示,访问CLOUD_pAYMENT_SERVICE的服务时,使用我们自定义的负载均衡算法**
+**表示,访问CLOUD_PAYMENT_SERVICE的服务时,使用我们自定义的负载均衡算法**
 
 #### 自定义负载均衡算法:
 
@@ -2162,7 +2162,7 @@ prefix:
         就是我们在application.yml中指定的,当前是开发环境还是测试等环境
         这个可以不配置,如果不配置,那么前面的-也会没有
         file-extension
-        就是当前文件的格式(后缀),目前只支持yml和properties
+        就是当前文件的格式(后缀),目前只支持yml和properties 注意yml就是yml不能匹配yaml
 ```
 
 ![](.\图片\Alibaba的24.png)
@@ -2318,6 +2318,10 @@ Nacos默认有自带嵌入式数据库,derby,但是如果做集群模式的话,�
 ![](.\图片\Alibaba的49.png)
 
 可以看到,这个脚本就是通过jvm启动nacos
+
+**注意**比较新版的脚本中不是 -Dserver.port=3344在运行jar时要指定端口号要使用 -server.port=3344   （这里是有问题的-Dserver.port是直接跟在java后面执行
+
+-server.port是跟在jar后面）相当于是一个是jvm选项一个是spring读取
 
  所以我们最后修改的就是,nohup java -Dserver.port=3344
 

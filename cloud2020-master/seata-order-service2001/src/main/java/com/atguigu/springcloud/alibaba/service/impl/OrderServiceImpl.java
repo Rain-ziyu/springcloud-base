@@ -5,11 +5,15 @@ import com.atguigu.springcloud.alibaba.domain.Order;
 import com.atguigu.springcloud.alibaba.service.AccountService;
 import com.atguigu.springcloud.alibaba.service.OrderService;
 import com.atguigu.springcloud.alibaba.service.StorageService;
+import com.atguigu.springcloud.alibaba.util.HuToolUtil;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.concurrent.*;
 
 /**
  * @author lixiaolong
@@ -24,6 +28,8 @@ public class OrderServiceImpl implements OrderService {
     private StorageService storageService;
     @Resource
     private AccountService accountService;
+    @Autowired
+    private HuToolUtil huToolUtil;
 
     /**
      * 创建订单->调用库存服务扣减库存->调用账户服务扣减账户余额->修改订单状态
@@ -55,5 +61,19 @@ public class OrderServiceImpl implements OrderService {
 
         log.info("----->下订单结束了，O(∩_∩)O哈哈~");
 
+    }
+
+    @Override
+    public Long getId() {
+        Executor executor = new ThreadPoolExecutor(2, 2, 2, TimeUnit.SECONDS, new ArrayBlockingQueue<>(2), new ThreadPoolTaskExecutor());
+        for (int index = 0;index<20;index++){
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                Long snowflakeId = huToolUtil.getSnowflakeId();
+                log.info("获取Id:" + snowflakeId);
+            }
+        });}
+        return huToolUtil.getSnowflakeId();
     }
 }

@@ -7,12 +7,12 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848 #服务注册中心地址
+        server-addr: yzzy.top:8848 #服务注册中心地址
       config:
-        server-addr: localhost:8848 #配置中心地址
-        file-extension: yaml #指定yaml格式的配置
-        group: DEV_GROUP
-        namespace: 912eccb8-4d1d-43a0-80c5-0dc6ca5805f6
+        server-addr: yzzy.top:8848 #配置中心地址
+        file-extension: yml #指定yaml格式的配置  注意这里配置为yml 那么Dataid也是yml结尾
+        group: YZZY_GROUP
+        namespace: 2458948d-8fcc-41db-b56b-b477be2337cd
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
 # nacos-config-client-dev.yaml

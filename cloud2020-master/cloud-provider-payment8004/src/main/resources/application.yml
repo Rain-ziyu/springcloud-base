@@ -10,4 +10,4 @@ spring:
   cloud:
     zookeeper:
       connect-string: yzzy.top:2181
-#      dependency-names: wwl
+      dependency-names: wwl

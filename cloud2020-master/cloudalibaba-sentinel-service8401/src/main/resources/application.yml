@@ -7,15 +7,15 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848 #Nacos服务注册中心地址
+        server-addr: 192.168.150.111:1111 #Nacos服务注册中心地址
     sentinel:
       transport:
-        dashboard: localhost:8080 #配置Sentinel dashboard地址
+        dashboard: 192.168.150.111:8111 #配置Sentinel dashboard地址
         port: 8719
       datasource:
         ds1:
           nacos:
-            server-addr: localhost:8848
+            server-addr: 192.168.150.111:1111
             dataId: ${spring.application.name}
             groupId: DEFAULT_GROUP
             data-type: json
