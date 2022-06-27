@@ -14,7 +14,8 @@ public class GateWayConfig {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder) {
         RouteLocatorBuilder.Builder routes = routeLocatorBuilder.routes();
-        routes.route("path_route_atguigu", r -> r.path("/guoji").uri("http://news.baidu.com/guonei"))
+//         /**可以代理路径下的转发  改版本已经移除了一级路由
+        routes.route("path_route_atguigu", r -> r.path("/guoji/**").uri("http://news.baidu.com/guonei"))
                 .build();
         return routes.build();
     }
